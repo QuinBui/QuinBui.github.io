@@ -1,0 +1,525 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0F097E9A-9380-4DD3-AA14-90E8A1F2C131}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>demo</RootNamespace>
+    <AssemblyName>demo</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44324</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DnsClient, Version=1.4.0.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
+      <HintPath>..\packages\DnsClient.1.4.0\lib\net471\DnsClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MongoDB.Bson, Version=2.14.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.14.1\lib\net472\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.14.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.14.1\lib\net472\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.14.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.14.1\lib\net472\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Libmongocrypt, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Libmongocrypt.1.3.0\lib\net472\MongoDB.Libmongocrypt.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpCompress, Version=0.30.1.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpCompress.0.30.1\lib\net461\SharpCompress.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.5.0.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\images\13.1.jpg" />
+    <Content Include="Assets\images\13.2.jpg" />
+    <Content Include="Assets\images\13.3.jpg" />
+    <Content Include="Assets\images\13.4.jpg" />
+    <Content Include="Assets\images\13.5.jpg" />
+    <Content Include="Assets\images\13.6.jpg" />
+    <Content Include="Assets\images\2_Dienthoai\iphone12_den.jpg" />
+    <Content Include="Assets\images\2_Dienthoai\iphone12_do.jpg" />
+    <Content Include="Assets\images\2_Dienthoai\iphone12_trang.jpg" />
+    <Content Include="Assets\images\2_Dienthoai\iphone12_violet.jpg" />
+    <Content Include="Assets\images\2_Dienthoai\iphone12_xanh.png" />
+    <Content Include="Assets\images\2_Dienthoai\iphone12_xanh_la.jpg" />
+    <Content Include="Assets\images\800-200-800x200-58.png" />
+    <Content Include="Assets\images\800-200-800x200-59.png" />
+    <Content Include="Assets\images\800-200-800x200-74.png" />
+    <Content Include="Assets\images\800-200-800x200-76.png" />
+    <Content Include="Assets\images\A52s-800-200-800x200-2.png" />
+    <Content Include="Assets\images\acer1.jpg" />
+    <Content Include="Assets\images\acer1.png" />
+    <Content Include="Assets\images\acer2.jpg" />
+    <Content Include="Assets\images\acer3.jpg" />
+    <Content Include="Assets\images\acer4.jpg" />
+    <Content Include="Assets\images\acer5.jpg" />
+    <Content Include="Assets\images\acer6.jpg" />
+    <Content Include="Assets\images\addtocart.jpg" />
+    <Content Include="Assets\images\addtocart.png" />
+    <Content Include="Assets\images\admin.jpg" />
+    <Content Include="Assets\images\aripod1.1.jpg" />
+    <Content Include="Assets\images\aripod1.2.jpg" />
+    <Content Include="Assets\images\aripod1.3.jpg" />
+    <Content Include="Assets\images\aripod1.jpg" />
+    <Content Include="Assets\images\b1.png" />
+    <Content Include="Assets\images\b2.png" />
+    <Content Include="Assets\images\b3.png" />
+    <Content Include="Assets\images\b4.png" />
+    <Content Include="Assets\images\b5.png" />
+    <Content Include="Assets\images\bangroll.png" />
+    <Content Include="Assets\images\banner1.png" />
+    <Content Include="Assets\images\banphim15 - Copy.jpg" />
+    <Content Include="Assets\images\banphim15.jpg" />
+    <Content Include="Assets\images\banphim16 - Copy.jpg" />
+    <Content Include="Assets\images\banphim16.jpg" />
+    <Content Include="Assets\images\bluetooth-airpods-pro-1.jpg" />
+    <Content Include="Assets\images\bluetooth-airpods-pro-3.jpg" />
+    <Content Include="Assets\images\bluetooth-airpods-pro-4.jpg" />
+    <Content Include="Assets\images\bluetooth-airpods-pro2.jpg" />
+    <Content Include="Assets\images\bluetooth-true-1.jpg" />
+    <Content Include="Assets\images\bluetooth-true-2.jpg" />
+    <Content Include="Assets\images\bluetooth-true-3.jpg" />
+    <Content Include="Assets\images\bluetooth-true-4.jpg" />
+    <Content Include="Assets\images\bluetooth-true-5.jpg" />
+    <Content Include="Assets\images\bluetooth-true-6.jpg" />
+    <Content Include="Assets\images\bluetooth-true1.jpg" />
+    <Content Include="Assets\images\bluetooth-true2.jpg" />
+    <Content Include="Assets\images\bluetooth-true23.jpg" />
+    <Content Include="Assets\images\c1.png" />
+    <Content Include="Assets\images\c2.png" />
+    <Content Include="Assets\images\c3.png" />
+    <Content Include="Assets\images\c4.png" />
+    <Content Include="Assets\images\carosel1.jpg" />
+    <Content Include="Assets\images\carosel2.jpg" />
+    <Content Include="Assets\images\carosel3.png" />
+    <Content Include="Assets\images\carosel4.jpg" />
+    <Content Include="Assets\images\chuongtB.png" />
+    <Content Include="Assets\images\chuot0 - Copy.jpg" />
+    <Content Include="Assets\images\chuot0.jpg" />
+    <Content Include="Assets\images\chuot00 - Copy.jpg" />
+    <Content Include="Assets\images\chuot00.jpg" />
+    <Content Include="Assets\images\chuot01 - Copy.jpg" />
+    <Content Include="Assets\images\CPU intel core 2 duo.jpg" />
+    <Content Include="Assets\images\Cpu intel Core i5.jpg" />
+    <Content Include="Assets\images\crs1.png" />
+    <Content Include="Assets\images\crs2.png" />
+    <Content Include="Assets\images\crs3.png" />
+    <Content Include="Assets\images\crs4.png" />
+    <Content Include="Assets\images\crs5.png" />
+    <Content Include="Assets\images\crs6.png" />
+    <Content Include="Assets\images\crs7.png" />
+    <Content Include="Assets\images\crs8.png" />
+    <Content Include="Assets\images\datHang.png" />
+    <Content Include="Assets\images\dell.png" />
+    <Content Include="Assets\images\dellg3.1.jpg" />
+    <Content Include="Assets\images\dellg3.2.jpg" />
+    <Content Include="Assets\images\dellg3.3.jpg" />
+    <Content Include="Assets\images\dellg3.4.jpg" />
+    <Content Include="Assets\images\dellg3.5.jpg" />
+    <Content Include="Assets\images\dellg3.6.jpg" />
+    <Content Include="Assets\images\dongho1.png" />
+    <Content Include="Assets\images\dongho2.png" />
+    <Content Include="Assets\images\dongho3.png" />
+    <Content Include="Assets\images\download.png" />
+    <Content Include="Assets\images\e1.png" />
+    <Content Include="Assets\images\e2.png" />
+    <Content Include="Assets\images\fb.png" />
+    <Content Include="Assets\images\galaxytabs7.1.jpg" />
+    <Content Include="Assets\images\galaxytabs7.2.jpg" />
+    <Content Include="Assets\images\galaxytabs7.3.jpg" />
+    <Content Include="Assets\images\galaxytabs7.4.jpg" />
+    <Content Include="Assets\images\galaxytabs7.5.jpg" />
+    <Content Include="Assets\images\galaxyzfold3.png" />
+    <Content Include="Assets\images\gg.png" />
+    <Content Include="Assets\images\giohang.jpg" />
+    <Content Include="Assets\images\gop1.png" />
+    <Content Include="Assets\images\gop2.png" />
+    <Content Include="Assets\images\heartred.png" />
+    <Content Include="Assets\images\heartwhite.png" />
+    <Content Include="Assets\images\hinhct0.jpg" />
+    <Content Include="Assets\images\hinhct1.jpg" />
+    <Content Include="Assets\images\hinhct2.jpg" />
+    <Content Include="Assets\images\hinhct3.jpg" />
+    <Content Include="Assets\images\hinhnull.png" />
+    <Content Include="Assets\images\hp-envy-13-1.jpg" />
+    <Content Include="Assets\images\hp-envy-13-2.jpg" />
+    <Content Include="Assets\images\hp-envy-13-3.jpg" />
+    <Content Include="Assets\images\hp-envy-13-4.jpg" />
+    <Content Include="Assets\images\hp-envy-13-5.jpg" />
+    <Content Include="Assets\images\hp-envy-13-6.jpg" />
+    <Content Include="Assets\images\hp-gaming-victus-1.jpg" />
+    <Content Include="Assets\images\hp-gaming-victus-16-2.jpg" />
+    <Content Include="Assets\images\hp-gaming-victus-16-3.jpg" />
+    <Content Include="Assets\images\hp-gaming-victus-16-4.jpg" />
+    <Content Include="Assets\images\hp-gaming-victus-16-5.jpg" />
+    <Content Include="Assets\images\hp-gaming-victus-16-6.jpg" />
+    <Content Include="Assets\images\huawei-matepad-1.jpg" />
+    <Content Include="Assets\images\huawei-matepad-11-xam-12.jpg" />
+    <Content Include="Assets\images\huawei-matepad-11-xam-13.jpg" />
+    <Content Include="Assets\images\huawei-matepad-11-xam-14.jpg" />
+    <Content Include="Assets\images\huawei-matepad-11-xam-2.jpg" />
+    <Content Include="Assets\images\huawei-matepad-11-xam-3.jpg" />
+    <Content Include="Assets\images\huawei-matepad-11-xam-5.jpg" />
+    <Content Include="Assets\images\huydon.jpg" />
+    <Content Include="Assets\images\iconaccount.png" />
+    <Content Include="Assets\images\iconphone.png" />
+    <Content Include="Assets\images\ip12.jpg" />
+    <Content Include="Assets\images\ip13.jpg" />
+    <Content Include="Assets\images\ipad-air-4-1.jpg" />
+    <Content Include="Assets\images\ipad-air-4-2.jpg" />
+    <Content Include="Assets\images\ipad-air-4-3.jpg" />
+    <Content Include="Assets\images\ipad-air-4-4.jpg" />
+    <Content Include="Assets\images\ipad-air-4-green-1.jpg" />
+    <Content Include="Assets\images\ipad-air-4-grey-3.jpg" />
+    <Content Include="Assets\images\ipad-air-4-silver-2.jpg" />
+    <Content Include="Assets\images\ipad-air-4-sky-blue-4.jpg" />
+    <Content Include="Assets\images\ipad-air-4-wifi-5.jpg" />
+    <Content Include="Assets\images\ipad-air-4-wifi-6.jpg" />
+    <Content Include="Assets\images\ipad-mini-6-3.jpg" />
+    <Content Include="Assets\images\ipad-mini-6-purple-1-1.jpg" />
+    <Content Include="Assets\images\ipad-mini-6-wifi-1-1.jpg" />
+    <Content Include="Assets\images\ipad-mini-6-wifi-4.jpg" />
+    <Content Include="Assets\images\ipad-mini-6-wifi-cellular-pink-1-1.jpg" />
+    <Content Include="Assets\images\ipad-mini-6-wifi-cellular-pink-2.jpg" />
+    <Content Include="Assets\images\ipad-mini-6r-purple-2.jpg" />
+    <Content Include="Assets\images\ipad-pro-2021-11-1.jpg" />
+    <Content Include="Assets\images\ipad-pro-2021-11-2.jpg" />
+    <Content Include="Assets\images\ipad-pro-m1-11-3.jpg" />
+    <Content Include="Assets\images\ipad-pro-m1-11-4.jpg" />
+    <Content Include="Assets\images\ipad-pro-m1-11-5.jpg" />
+    <Content Include="Assets\images\ipad-pro-m1-11-6.jpg" />
+    <Content Include="Assets\images\ipad.png" />
+    <Content Include="Assets\images\ipad2.png" />
+    <Content Include="Assets\images\ipadm1.1.jpg" />
+    <Content Include="Assets\images\ipadm1.2.jpg" />
+    <Content Include="Assets\images\ipadm1.3.jpg" />
+    <Content Include="Assets\images\ipadm1.4.jpg" />
+    <Content Include="Assets\images\ipadm1.5.jpg" />
+    <Content Include="Assets\images\ipadm1.6.jpg" />
+    <Content Include="Assets\images\ipadmini6.1.jpg" />
+    <Content Include="Assets\images\ipadmini6.1.jpg.1.jpg" />
+    <Content Include="Assets\images\iphone12mini.png" />
+    <Content Include="Assets\images\iphone12_den.jpg" />
+    <Content Include="Assets\images\iphone12_do.jpg" />
+    <Content Include="Assets\images\iphone12_trang.jpg" />
+    <Content Include="Assets\images\iphone12_violet.jpg" />
+    <Content Include="Assets\images\iphone12_xanh.png" />
+    <Content Include="Assets\images\iphone12_xanh_la.jpg" />
+    <Content Include="Assets\images\iphone13.png" />
+    <Content Include="Assets\images\iphone13t.png" />
+    <Content Include="Assets\images\KeyBoard Logitech.jpg" />
+    <Content Include="Assets\images\KeyBoard.png" />
+    <Content Include="Assets\images\laptop.png" />
+    <Content Include="Assets\images\lenovo-ideapad-1.jpg" />
+    <Content Include="Assets\images\lenovo-ideapad-2.jpg" />
+    <Content Include="Assets\images\lenovo-ideapad-3.jpg" />
+    <Content Include="Assets\images\lenovo-ideapad-4.jpg" />
+    <Content Include="Assets\images\lenovo-ideapad-5.jpg" />
+    <Content Include="Assets\images\lenovo-ideapad-6.jpg" />
+    <Content Include="Assets\images\Login-icon-48.png" />
+    <Content Include="Assets\images\login1111.png" />
+    <Content Include="Assets\images\loginaccount.jpg" />
+    <Content Include="Assets\images\logo.png" />
+    <Content Include="Assets\images\logo1.png" />
+    <Content Include="Assets\images\logo2.png" />
+    <Content Include="Assets\images\logo22.mp4" />
+    <Content Include="Assets\images\logochinh.png" />
+    <Content Include="Assets\images\logoshop.jpg" />
+    <Content Include="Assets\images\m.jpg" />
+    <Content Include="Assets\images\mac1.jpg" />
+    <Content Include="Assets\images\mac2.jpg" />
+    <Content Include="Assets\images\mac3.jpg" />
+    <Content Include="Assets\images\mac4.jpg" />
+    <Content Include="Assets\images\mac5.jpg" />
+    <Content Include="Assets\images\mac6.jpg" />
+    <Content Include="Assets\images\macam1.jpg" />
+    <Content Include="Assets\images\macbookm1.png" />
+    <Content Include="Assets\images\macm1.jpg" />
+    <Content Include="Assets\images\macm12020.1.jpg" />
+    <Content Include="Assets\images\macm12020.2.jpg" />
+    <Content Include="Assets\images\macm12020.3.jpg" />
+    <Content Include="Assets\images\macm12020.4.jpg" />
+    <Content Include="Assets\images\macm12020.5.jpg" />
+    <Content Include="Assets\images\macm12020.6.jpg" />
+    <Content Include="Assets\images\macpro.png" />
+    <Content Include="Assets\images\mastercard.png" />
+    <Content Include="Assets\images\msi.png" />
+    <Content Include="Assets\images\msi1.jpg" />
+    <Content Include="Assets\images\msi2.jpg" />
+    <Content Include="Assets\images\msi3.jpg" />
+    <Content Include="Assets\images\msi4.jpg" />
+    <Content Include="Assets\images\msi5.jpg" />
+    <Content Include="Assets\images\msi6.jpg" />
+    <Content Include="Assets\images\muahang.png" />
+    <Content Include="Assets\images\muangay.png" />
+    <Content Include="Assets\images\nhanvien.jpeg" />
+    <Content Include="Assets\images\nhanvienquanly.jpg" />
+    <Content Include="Assets\images\NhanVienQuanLy.png" />
+    <Content Include="Assets\images\opporeno6.png" />
+    <Content Include="Assets\images\pad.png" />
+    <Content Include="Assets\images\padddddd.png" />
+    <Content Include="Assets\images\padding.png" />
+    <Content Include="Assets\images\padhead.png" />
+    <Content Include="Assets\images\phone.png" />
+    <Content Include="Assets\images\phoneicon.png" />
+    <Content Include="Assets\images\Pin Du Phong.jpg" />
+    <Content Include="Assets\images\Pin SamSung.png" />
+    <Content Include="Assets\images\Pin X-Mobile.jpg" />
+    <Content Include="Assets\images\quangdepchai.png" />
+    <Content Include="Assets\images\quanly.jpg" />
+    <Content Include="Assets\images\RAM 2GB.jpg" />
+    <Content Include="Assets\images\RAM 4GB DDR3.jpg" />
+    <Content Include="Assets\images\RAM 4GB.jpg" />
+    <Content Include="Assets\images\ram0 - Copy.png" />
+    <Content Include="Assets\images\ram0.png" />
+    <Content Include="Assets\images\s21.1.jpg" />
+    <Content Include="Assets\images\s21.2.jpg" />
+    <Content Include="Assets\images\s21.3.jpg" />
+    <Content Include="Assets\images\s21.4.jpg" />
+    <Content Include="Assets\images\s21.5.jpg" />
+    <Content Include="Assets\images\s21.6.jpg" />
+    <Content Include="Assets\images\s21.png" />
+    <Content Include="Assets\images\samsung-galaxy-tab-s7-1.jpg" />
+    <Content Include="Assets\images\samsung-galaxy-tab-s7-2.jpg" />
+    <Content Include="Assets\images\samsung-galaxy-tab-s7-3.jpg" />
+    <Content Include="Assets\images\samsung-galaxy-tab-s7-4.jpg" />
+    <Content Include="Assets\images\samsung-galaxy-tab-s7-5.jpg" />
+    <Content Include="Assets\images\samsung-galaxy-tab-s7-6.jpg" />
+    <Content Include="Assets\images\smarrtwatch.png" />
+    <Content Include="Assets\images\ssf3_1.jpg" />
+    <Content Include="Assets\images\ssf3_2.jpg" />
+    <Content Include="Assets\images\ssf3_3.jpg" />
+    <Content Include="Assets\images\ssf3_4.jpg" />
+    <Content Include="Assets\images\ssf3_5.jpg" />
+    <Content Include="Assets\images\ssf3_6.jpg" />
+    <Content Include="Assets\images\ss_f3.png" />
+    <Content Include="Assets\images\tablet.png" />
+    <Content Include="Assets\images\tai-nghe-bluetooth-true-1.jpg" />
+    <Content Include="Assets\images\tai-nghe-bluetooth-true-2.jpg" />
+    <Content Include="Assets\images\tai-nghe-bluetooth-true-3.jpg" />
+    <Content Include="Assets\images\tai-nghe-bluetooth-true-4.jpg" />
+    <Content Include="Assets\images\tai-nghe-bluetooth-true-5.jpg" />
+    <Content Include="Assets\images\tai-nghe-bluetooth-true-6.jpg" />
+    <Content Include="Assets\images\user.jpg" />
+    <Content Include="Assets\images\visa.png" />
+    <Content Include="Assets\images\zlip.png" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Core\Compression\Snappy\lib\win\snappy32.dll" />
+    <Content Include="Core\Compression\Snappy\lib\win\snappy64.dll" />
+    <Content Include="Core\Compression\Zstandard\lib\win\libzstd.dll" />
+    <Content Include="Global.asax" />
+    <Content Include="mongocrypt.dll" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ChiTietTB.cs" />
+    <Compile Include="Models\ThietBi.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="libmongocrypt.so" />
+    <Content Include="libmongocrypt.dylib" />
+    <Content Include="Core\Compression\Zstandard\lib\osx\libzstd.dylib" />
+    <Content Include="Core\Compression\Zstandard\lib\linux\libzstd.so" />
+    <Content Include="Core\Compression\Snappy\lib\osx\libsnappy64.dylib" />
+    <Content Include="Core\Compression\Snappy\lib\linux\libsnappy64.so" />
+    <Content Include="Assets\images\LinhKienMT.docx" />
+    <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_LayoutPage1.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Details.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Assets\images\1_Laptop\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51736</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44324/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\MongoDB.Libmongocrypt.1.3.0\build\MongoDB.Libmongocrypt.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MongoDB.Libmongocrypt.1.3.0\build\MongoDB.Libmongocrypt.targets'))" />
+    <Error Condition="!Exists('..\packages\MongoDB.Driver.Core.2.14.1\build\MongoDB.Driver.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MongoDB.Driver.Core.2.14.1\build\MongoDB.Driver.Core.targets'))" />
+  </Target>
+  <Import Project="..\packages\MongoDB.Libmongocrypt.1.3.0\build\MongoDB.Libmongocrypt.targets" Condition="Exists('..\packages\MongoDB.Libmongocrypt.1.3.0\build\MongoDB.Libmongocrypt.targets')" />
+  <Import Project="..\packages\MongoDB.Driver.Core.2.14.1\build\MongoDB.Driver.Core.targets" Condition="Exists('..\packages\MongoDB.Driver.Core.2.14.1\build\MongoDB.Driver.Core.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

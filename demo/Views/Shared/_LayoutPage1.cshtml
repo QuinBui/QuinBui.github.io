@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<style>
+</style>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <img src="~/Assets/images/padhead.png" style="width:100%" />
+        </div>
+        @using (Html.BeginForm("Serch", "Home"))
+        {
+            <div class="row">
+                <nav class="navbar navbar-expand-lg navbar-light" style="width:100%;background-color:antiquewhite">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="@Url.Action("Home","Home")">
+                            <img src="~/Assets/images/logochinh.png" width="50" height="50" class="rounded" />
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+
+                                <li class="nav-item">
+                                    <input class="form-control" type="search" placeholder="Search" aria-label="Search" name="txt_serch" />
+                                </li>
+                                <li class="nav-item">
+                                    <button class="btn btn-outline-success" type="submit">Search</button>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="@Url.Action("DonHang", "PayMent")">Lịch sử đơn hàng</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-item" href="@Url.Action("ShowCart", "ShoppingCart")">Cart<img src="~/Assets/images/addtocart.jpg" height="50" width="50" /></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="@Url.Action("ShowCart", "ShoppingCart")">Trợ giúp</a>
+                                </li>
+
+                            </ul>
+
+
+                        </div>
+
+
+
+                    </div>
+                    @*@{
+                        var info = Session["user"] as DoAn.Models.account;
+                    }
+                    @{
+                        if (info != null)
+                        {
+                            <h5 style="color:seagreen">@info.HovaTen</h5>
+                            <h1 style="width:20"></h1>
+                            <a href="@Url.Action("Login", "Account")" class="img-wrap">
+                                <img src="~/Assets/images/loginaccount.jpg" style="width:50px;height:50px" />
+                                Đăng xuất
+                            </a>
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("Login", "Account")" class="img-wrap">
+                                <img src="~/Assets/images/loginaccount.jpg" style="width:50px;height:50px" />
+                                Login
+                            </a>
+                        }
+                    }*@
+
+                </nav>
+            </div>
+        }
+        @*-------------------------------------------------------------menu bar3-----------------------------------*@
+        <div class="row" style="background-color:black; height:80px;">
+            <div class="col-12 mt-3 mx-auto">
+                <ul>
+                    <li style="float:left; position:relative; display:block; width:150px; color:white; ">
+                        <h4> @Html.ActionLink("ĐIỆN THOẠI", "Home", "SerchProducts", new { ID = 1 }, null)</h4>
+                    </li>
+                    <li style="float:left; position:relative;  display:block; width:150px; color:white; ">
+                        <h4> @Html.ActionLink("LAPTOP", "Home", "SerchProducts", new { ID = 2 }, null)</h4>
+                    </li>
+                    <li style="float:left; position:relative;  display:block; width:150px; color:white; ">
+                        <h4>  @Html.ActionLink("MÁY TÍNH BẢNG", "Home", "SerchProducts", new { ID = 3 }, null)</h4>
+                    </li>
+                    <li style="float:left; position:relative; display:block;width:150px;color:white;">
+                        <h4>  @Html.ActionLink("TAI NGHE", "Home", "SerchProducts", new { ID = 7 }, null)</h4>
+                    </li>
+                    <li style="float:left; position:relative; display:block;width:150px;color:white;">
+                        <h4> @Html.ActionLink("ĐỒNG HỒ", "Home", "SerchProducts", new { ID = 5 }, null)</h4>
+                    </li>
+                    <li style="float:left; position:relative; display:block;width:150px;color:white;">
+                        <h4>  @Html.ActionLink("PHỤ KIỆN ĐIỆN THOẠI", "Home", "SerchProducts", new { ID = 7 }, null)</h4>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="row" style="height:20px"></div>
+
+        @*------------------------------------------------nội dung-----------------------------------------------*@
+        <div class="row" style="margin-top:40px">
+            <div>
+                @RenderBody()
+            </div>
+        </div>
+
+
+        <div class="row">
+            <table>
+                <tr>
+                    <td>
+                        <p>
+                            Lịch sử mua hàng<br />
+                            Cộng tác bán hàng cùng TGDĐ
+                            <br />
+                            Tìm hiểu về mua trả góp
+                            <br />
+                            Chính sách bảo hành
+                            <br />
+                            Chính sách đổi trả
+                        </p>
+                    </td>
+                    <td></td>
+                    <td>
+                        <p>
+                            Giới thiệu công ty (MWG.vn)<br />
+
+                            Tuyển dụng
+                            <br />
+                            Gửi góp ý, khiếu nại
+                            <br />
+                            Tìm siêu thị (2.756 shop)
+                            <br />
+                            Xem bản mobile
+                        </p>
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        <p>
+                            Tổng đài hỗ trợ (Miễn phí gọi)
+                            <br />
+                            Gọi mua: 1800.1060 (7:30 - 22:00)
+                            <br />
+                            Kỹ thuật: 1800.1763 (7:30 - 22:00)
+                            <br />
+                            Khiếu nại: 1800.1062 (8:00 - 21:30)
+                            <br />
+                            Bảo hành: 1800.1064 (8:00 - 21:00)
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

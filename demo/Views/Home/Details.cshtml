@@ -1,0 +1,14 @@
+﻿@model IEnumerable<demo.Models.ChiTietTB>
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+
+@foreach (var item in Model) {
+   <img src="~/Assets/images/@item.HINHCT" />
+   <h3>@item.THONGSO</h3>
+   <img src="~/Assets/images/datHang.png" />
+   
+}

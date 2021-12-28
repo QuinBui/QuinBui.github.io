@@ -1,0 +1,4 @@
+C:\Users\MSI\Desktop\Mongo\demo\demo\obj\Debug\Mongo_MuaBanDienTu.csproj.AssemblyReference.cache
+C:\Users\MSI\Desktop\Mongo\demo\demo\obj\Debug\Mongo_MuaBanDienTu.csproj.CoreCompileInputs.cache
+C:\Users\MSI\Desktop\Mongo\demo\demo\obj\Debug\demo.dll
+C:\Users\MSI\Desktop\Mongo\demo\demo\obj\Debug\demo.pdb
